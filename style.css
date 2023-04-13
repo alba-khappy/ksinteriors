@@ -234,7 +234,7 @@ svg path {
 .hero-banner__whatsapp {
     position: fixed;
     left: 5%;
-    top: 72%;
+    /* top: 72%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -755,7 +755,7 @@ svg path {
 
     .about__description {
         padding: 5%;
-        background: url(./images/lines.svg) 10% 10% / 15% no-repeat, transparent url(./images/lines-rotate.svg) 90% 90% / 15% no-repeat;
+        background: none;
         background-color: #262D30;
     }
 
