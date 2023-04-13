@@ -162,6 +162,7 @@ input {
     font-size: 1rem;
     font-weight: 300;
     font-family: 'Roboto Condensed', serif;
+    padding: 0;
 }
 
 .header__button-lang--active {
@@ -193,9 +194,10 @@ input {
 }
 
 .hero-banner__socials-wrapper {
+    position: relative;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
 }
 
@@ -230,13 +232,16 @@ svg path {
 /*hero-banner__whatsapp*/
 
 .hero-banner__whatsapp {
+    position: fixed;
+    left: 5%;
+    top: 72%;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 2rem;
     height: 2rem;
-    position: relative;
     text-align: center;
+    z-index: 20;
 }
   
 .hero-banner__whatsapp::before {
@@ -476,10 +481,10 @@ svg path {
     background: rgba(41, 39, 35, 0.2);
 }
 
-
 .portfolio__link-description {
     font-weight: 300;
     font-size: 1.7rem;
+    color: #FCFCFC;
     z-index: 2;
 }
 
@@ -497,6 +502,7 @@ svg path {
 
 .portfolio__button-see-more:hover {
     background-color: rgba(252, 252, 252, 0.4);
+    color: #FCFCFC;
 }
 
 
@@ -654,8 +660,8 @@ svg path {
         position: absolute;
         right: 10%;
         top: 10%;
-        width: 2rem;
-        height: 2rem;
+        width: 1.5rem;
+        height: 1.5rem;
         border: none;
         background: url(./images/X.svg) center / contain no-repeat;
 
@@ -712,6 +718,10 @@ svg path {
 
 @media(max-width: 768px) {
 
+    .hero-banner__section {
+        background: url(./images/hero-banner.jpg) center / cover no-repeat;
+    }
+
     .header__logo {
         width: 8rem;
     }
@@ -724,6 +734,11 @@ svg path {
         text-align: center;
     }
 
+    .about__description {
+        background: none;
+        background-color: #262D30;
+    }
+
     .about__image {
         width: 90%;
     }
@@ -733,8 +748,7 @@ svg path {
     }
 
     .about__image {
-        width: 60%;
-        padding-top: 50%;
+        padding-top: 80%;
         justify-self: center;
         background: url(./images/about-img.jpg) top / contain no-repeat;
     }
@@ -753,6 +767,15 @@ svg path {
     .principles__container {
         grid-template-columns: 1fr;
         padding: 0 5% 20%;
+    }
+
+    .portfolio__link-description {
+        max-width: 15rem;
+        font-size: 1rem;
+    }
+
+    .portfolio__button-see-more {
+        padding: .2rem .7rem;
     }
 
     .principles__image {
