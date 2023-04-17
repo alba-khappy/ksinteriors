@@ -105,7 +105,6 @@ input {
 
 /*header*/
 
-
 .header__section {
     position: fixed;
     top: 0;
@@ -115,7 +114,43 @@ input {
     padding: 1% 0;
     z-index: 10;
     transition: all .5s;
+    animation: none;
 }
+
+.header__section--background-show:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #202020;
+    animation: header-show .3s;
+}
+
+.header__section--background-hide:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 100%;
+    background-color: #202020;
+    animation: header-hide .3s;
+}
+
+@keyframes header-show {
+    from {
+        bottom: 100%;
+    }
+}
+
+@keyframes header-hide {
+    from {
+        bottom: 0;
+    }
+}
+
 
 .header__container {
     display: grid;
@@ -126,6 +161,7 @@ input {
     width: 10rem;
     height: 3rem;
     background: url(./images/logo.svg) center / contain no-repeat;
+    z-index: 10;
 }
 
 .header__button-burger {
@@ -169,6 +205,7 @@ input {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    z-index: 10;
 }
 
 .header__button-lang {
@@ -193,7 +230,7 @@ input {
     min-height: 650px;
     display: grid;
     padding: 0 5%;
-    background: url(./images/lines-hero-section.svg) 100% 0 / auto no-repeat, url(./images/lines-hero-section-rotate.svg) 0 100% / auto no-repeat, url(./images/hero-banner.jpg) center / cover no-repeat;
+    background: url(./images/hero-banner.jpg) center / cover no-repeat;
 }
 
 .hero-banner__main-info {
@@ -256,6 +293,66 @@ svg path {
     right: 5%;
 }
 
+.hero-banner__line--right-long {
+    position: absolute;
+    right: 0;
+    top: 20%;
+    animation: showRightLong 2s;
+}
+
+.hero-banner__line--left-long {
+    position: absolute;
+    transform: rotate(180deg);
+    left: 0;
+    bottom: 20%;
+    animation: showLeftLong .8s;
+}
+
+.hero-banner__line--right-short {
+    position: absolute;
+    right: 20%;
+    top: 0;
+    animation: showRightShort 1.2s;
+}
+
+.hero-banner__line--left-short {
+    position: absolute;
+    transform: rotate(180deg);
+    left: 20%;
+    bottom: 0;
+    animation: showLeftShort 1s;
+    opacity: 1;
+}
+
+@keyframes showRightLong {
+    from {
+        right: -100%;
+        top: 20%;
+    }
+}
+
+@keyframes showLeftLong {
+    from {
+        left: -100%;
+        bottom: 20%;
+    }
+}
+
+@keyframes showRightShort {
+    from {
+        right: 20%;
+        top: -100%;
+    }
+}
+
+@keyframes showLeftShort {
+    from {
+        left: 20%;
+        bottom: -100%;
+        z-index: 0;
+        opacity: 0;
+    }
+}
 
 /*hero-banner__whatsapp*/
 
@@ -481,6 +578,11 @@ svg path {
     background: url(./images/portfolio-1.jpg) center / cover no-repeat;
 }
 
+.portfolio__link:hover {
+    transform: scale(1.1);
+    z-index: 20;
+}
+
 .portfolio__link::before {
     content: '';
     position: absolute;
@@ -506,6 +608,10 @@ svg path {
 
 .portfolio__link:hover:before{
     background: rgba(41, 39, 35, 0.2);
+}
+
+.portfolio__link:hover::after{
+    background: url(./images/lines.svg) 15% 15% / 50% no-repeat, url(./images/lines-rotate.svg) 85% 85% / 50% no-repeat;
 }
 
 .portfolio__link-description {
