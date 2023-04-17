@@ -112,7 +112,7 @@ input {
     right: 0;
     background: linear-gradient(180deg, rgba(17, 15, 11, 0.62) 0%, rgba(17, 15, 11, 0) 100%);
     padding: 1% 0;
-    z-index: 10;
+    z-index: 50;
     transition: all .5s;
     animation: none;
 }
@@ -261,15 +261,6 @@ input {
     align-items: center;
 }
 
-.hero-banner__logo-description {
-    font-size: 2rem;
-    margin-bottom: 5rem;
-}
-
-.hero-banner__website-description {
-    font-size: 2.5rem;
-}
-
 .socials__list {
     display: flex;
     justify-content: center;
@@ -365,7 +356,29 @@ svg path {
     width: 2rem;
     height: 2rem;
     text-align: center;
-    z-index: 20;
+    z-index: 25;
+}
+
+.hero-banner__whatsapp--to-top {
+    animation: to-top .3s;
+    bottom: auto;
+}
+
+.hero-banner__whatsapp--to-bottom {
+    animation: to-bottom .3s;
+    bottom: 5%;
+}
+
+@keyframes to-bottom {
+    from {
+        bottom: 20%;
+    }
+}
+
+@keyframes to-top {
+    from {
+        bottom: auto;
+    }
 }
   
 .hero-banner__whatsapp::before {
@@ -725,15 +738,11 @@ svg path {
         padding: 5%;
     }
 
-    .hero-banner__section {
-        background: url(./images/lines-hero-section.svg) 100% 0 / 60% no-repeat, url(./images/lines-hero-section-rotate.svg) 0 100% / 60% no-repeat, url(./images/hero-banner.jpg) center / cover no-repeat;
-    }
-
     .hero-banner__main-heading {
         font-size: 9rem;
     }
 
-    .hero-banner__logo-description, .hero-banner__website-description,  .principles__heading, .portfolio__heading, .footer__heading, .portfolio__link-description {
+    .principles__heading, .portfolio__heading, .footer__heading, .portfolio__link-description {
         font-size: 1.5rem;
     }
 
@@ -901,10 +910,6 @@ svg path {
         font-size: 3rem;
     }
 
-    .hero-banner__website-description {
-        text-align: center;
-    }
-
     .about__description {
         background: none;
         background-color: #262D30;
@@ -956,6 +961,71 @@ svg path {
 
     .footer__content-wrapper {
         width: 100%;
+    }
+
+    .hero-banner__line--right-long {
+        position: absolute;
+        right: 0;
+        top: 5%;
+        animation: showRightLong 2s;
+    }
+    
+    .hero-banner__line--left-long {
+        position: absolute;
+        transform: rotate(180deg);
+        left: 0;
+        bottom: 5%;
+        animation: showLeftLong .8s;
+    }
+    
+    .hero-banner__line--right-short {
+        position: absolute;
+        right: 5%;
+        top: 0;
+        animation: showRightShort 1.2s;
+    }
+    
+    .hero-banner__line--left-short {
+        position: absolute;
+        transform: rotate(180deg);
+        left: 5%;
+        bottom: 0;
+        animation: showLeftShort 1s;
+        opacity: 1;
+    }
+    
+    @keyframes showRightLong {
+        from {
+            right: -100%;
+            top: 5%;
+        }
+    }
+    
+    @keyframes showLeftLong {
+        from {
+            left: -100%;
+            bottom: 5%;
+        }
+    }
+    
+    @keyframes showRightShort {
+        from {
+            right: 5%;
+            top: -100%;
+        }
+    }
+    
+    @keyframes showLeftShort {
+        from {
+            left: 5%;
+            bottom: -100%;
+            z-index: 0;
+            opacity: 0;
+        }
+    }
+
+    .portfolio__link:hover {
+        transform: none;
     }
 
 }
