@@ -1,0 +1,290 @@
+.work-process__section {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.work-process__heading-part {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(./images/portfolio-1.jpg) center / cover no-repeat;
+}
+
+.work-process__heading-part::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    transition: all .3s;
+}
+
+.work-process__heading-part::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url(./images/lines.svg) 15% 15% / 40% no-repeat, url(./images/lines-rotate.svg) 85% 85% / 40% no-repeat;
+    transition: all .3s;
+}
+
+.work-process__heading, .realization__heading {
+    font-weight: 500;
+    font-size: 3rem;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px #FCFCFC;
+    color: transparent;
+    opacity: .7;
+    text-stroke: 2px #FCFCFC;
+    -webkit-background-clip: text;
+    background-clip: text;
+    z-index: 3;
+}
+
+.work-process__stages-part {
+    display: flex;
+    align-items: flex-start;
+    padding: 10% 5% 0 2%;
+}
+
+.work-process__stages-line {
+    background: url(./images/stages-line.svg) center / contain no-repeat;
+    height: 93%;
+    width: 3rem;
+    animation: bg-img 3s infinite linear;
+}
+
+@keyframes bg-img {
+    0%   { background: url(./images/stages-line.svg) center / contain no-repeat; }
+    50% { background: url(./images/stages-lighten.svg) center / contain no-repeat; }
+    100%   { background: url(./images/stages-line.svg) center / contain no-repeat; }
+}
+
+.work-process__stages-list {
+    position: relative;
+    width: 100%;
+}
+
+.work-process__stages-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.work-process__item-number {
+    grid-area: 1/1/2/2;
+    font-family: 'Oswald', serif;
+    font-weight: 700;
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.work-process__item-heading {
+    grid-area: 1/2/2/3;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+.work-process__item-description {
+    grid-column: 1/3;
+    font-weight: 300;
+    font-size: .8rem;
+}
+
+/*realization*/
+
+.realization__section {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 2rem;
+    padding: 2% 0 2% 5%;
+}
+
+.realization__heading-part {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(./images/portfolio-1.jpg) center / cover no-repeat;
+}
+
+.realization__heading-part::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    transition: all .3s;
+}
+
+.realization__heading-part::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url(./images/lines.svg) 15% 15% / 40% no-repeat, url(./images/lines-rotate.svg) 85% 85% / 40% no-repeat;
+    transition: all .3s;
+}
+
+.realization__description-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+.realization__description-heading {
+    width: fit-content;
+    position: relative;
+    border-radius: 1rem;
+    font-weight: 300;
+    font-size: 2rem;
+    margin: 0 auto 3rem;
+}
+
+.realization__description-content {
+    margin-bottom: 3rem;
+    font-weight: 300;
+    font-size: .9rem;
+}
+
+.realization__description-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #FCFCFC 50%, rgba(252, 252, 252, 0) 100%);
+}
+
+/*footer*/
+
+.footer__map--page-without-map {
+    display: none;
+}
+
+.footer__contacts-list--page-without-map {
+    grid-area: 1/1/2/2;
+    justify-self: center;
+}
+
+.footer__social-wrapper--page-without-map {
+    grid-area: 1/2/2/3;
+    width: auto;
+}
+
+
+@media (min-width: 1920px) {
+
+    .realization__description-part {
+        max-width: 1000px;
+        margin: 0 auto;  
+    }
+
+    .work-process__stages-part {
+        max-width: 1000px;
+    }
+    
+}
+
+@media(max-width:1200px) {
+
+    .work-process__section {
+        grid-template-columns: 1fr;
+    }
+
+    .work-process__heading, .realization__heading {
+        font-size: 2.5rem;
+    }
+
+    .work-process__heading-part, .realization__heading-part {
+        padding: 4rem 0;
+    }
+
+    .work-process__heading-part::after {
+        background: url(./images/lines.svg) 15% 50% / 25% no-repeat, url(./images/lines-rotate.svg) 85% 50% / 25% no-repeat;
+    }
+
+    .work-process__stages-line {
+        height: 90%;
+        margin-right: 1rem;
+    }
+
+    .work-process__stages-part {
+        padding: 2% 5%;
+    }
+
+    .work-process__item-number {
+        font-size: 2rem;
+    }
+
+    .work-process__item-heading {
+        font-size: 1rem;
+    }
+
+    .work-process__item-description {
+        font-size: .7rem;
+    }
+
+    .realization__section {
+        grid-template-columns: 1fr;
+        padding: 0;
+        margin-bottom: 3rem;
+    }
+
+    .realization__heading-part {
+        grid-area: 1/1/2/2;
+    }
+
+    .realization__heading-part::after {
+       background: url(./images/lines.svg) 15% 50% / 25% no-repeat, url(./images/lines-rotate.svg) 85% 50% / 25% no-repeat; 
+    }
+
+    .realization__description-heading {
+        margin-bottom: 1.5rem;
+    }
+
+    .realization__description-content {
+        margin-bottom: 1rem;
+    }
+
+    .realization__description-part {
+        grid-area: 2/1/3/2;
+        padding: 0 5%;
+    }
+
+    .footer__contacts-list--page-without-map, .footer__social-wrapper--page-without-map {
+        grid-area: auto;
+    }
+}
+
+@media(max-width: 768px) {
+    .work-process__stages-item {
+        grid-template-columns: 20% 80%;
+        row-gap: .5rem;
+    }
+
+    .work-process__stages-line {
+        height: 88%;
+        margin-top: 2rem;
+    }
+
+    .work-process__heading, .realization__heading {
+        font-size: 1.7rem;
+    }
+}

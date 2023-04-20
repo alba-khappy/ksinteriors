@@ -369,20 +369,43 @@ svg path {
 }
 
 .hero-banner__swiper-slide {
-    background: transparent center / cover no-repeat;
+    background: transparent center / 100% 100% no-repeat;
+}
+
+@keyframes zooming-bg-start {
+    0% {
+        background-size: 100% 100%;
+        opacity: 0;
+    }
+    100% {
+        background-size: 110% 110%;
+        opacity: 0.85;
+    }
 }
 
 @keyframes zooming-bg {
     0% {
-        background-size: 100%;
+        background-size: 110% 110%;
+        opacity: .85;
+    }
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
     }
     100% {
-        background-size: 200%;
+        background-size: 170% 170%;
+        opacity: 0.85;
     }
 }
 
+.hero-banner__swiper-slide.slick-current + .hero-banner__swiper-slide{
+    animation: zooming-bg-start 8s 1;
+}
+
 .hero-banner__swiper-slide.slick-current {
-    animation: zooming-bg 5s infinite;
+    animation: zooming-bg 8s 1;
 }
 
 .hero-banner__swiper-slide--1 {
@@ -698,7 +721,7 @@ svg path {
     z-index: 2;
 }
 
-.portfolio__button-see-more {
+.button-style {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -712,7 +735,7 @@ svg path {
     transition: all .3s;
 }
 
-.portfolio__button-see-more:before {
+.button-style:before {
 	content:'';
 	position: absolute;
 	top: 0;
@@ -723,7 +746,7 @@ svg path {
 	transition: all 1s ease;
 }
 
-.portfolio__button-see-more:hover:before {
+.button-style:hover:before {
 	width: 100%;
 }
 
@@ -732,7 +755,7 @@ svg path {
 .footer__section {
     text-align: center;
     padding-bottom: 3%;
-    background: url(./images/lines-rotate.svg) 90% 80% / 40% no-repeat;
+    background: url(./images/lines-rotate.svg) 90% 80% / 20% no-repeat;
 }
 
 .footer__heading {
@@ -1016,7 +1039,8 @@ svg path {
         font-size: 1rem;
     }
 
-    .portfolio__button-see-more {
+    .button-style {
+        font-size: 1rem;
         padding: .2rem .7rem;
     }
 
