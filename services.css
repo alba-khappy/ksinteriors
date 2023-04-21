@@ -104,8 +104,8 @@
 
 .realization__section {
     display: grid;
-    grid-template-columns: 60% 40%;
-    gap: 2rem;
+    grid-template-columns: 58% 40%;
+    gap: 2%;
     padding: 2% 0 2% 5%;
 }
 
